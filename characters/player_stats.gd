@@ -20,3 +20,12 @@ func _setup_local_to_scene():
 	dexterity = randi_range(3, 18)
 	constitution = randi_range(3, 18)
 	charisma = randi_range(3, 18)
+
+
+func to_dict() -> Dictionary:
+	var dict: Dictionary = {}
+	
+	for stat in ["strength", "intelligence", "wisdom", "dexterity", "constitution", "charisma"]:
+		dict[stat] = get(stat)
+	
+	return dict
