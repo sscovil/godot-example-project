@@ -26,6 +26,9 @@ func to_dict() -> Dictionary:
 	var dict: Dictionary = {}
 	
 	for stat in ["strength", "intelligence", "wisdom", "dexterity", "constitution", "charisma"]:
-		dict[stat] = get(stat)
+		# Abbreviate the attribute name (e.g. "STR", "INT", "WIS")
+		var key: String = stat.substr(0, 3).to_upper()
+		var value: int = get(stat)
+		dict[key] = value
 	
 	return dict
