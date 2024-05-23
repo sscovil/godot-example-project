@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://wlccy3s21rn1"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_3vrmq"]
+[ext_resource type="PackedScene" uid="uid://cf38id8byqxuy" path="res://characters/player.tscn" id="2_mgrvn"]
+[ext_resource type="Script" path="res://characters/character_class.gd" id="3_xkgdy"]
+[ext_resource type="Resource" uid="uid://wp88mpaj0b5u" path="res://characters/classes/thief.tres" id="4_45xdk"]
+
+[sub_resource type="Resource" id="Resource_b725r"]
+resource_local_to_scene = true
+script = ExtResource("3_xkgdy")
+name = "Fighter"
+max_health = 120
+base_speed = 280.0
+base_jump = -400.0
+abilities = 0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3vrmq")
+
+[node name="Player1" parent="." instance=ExtResource("2_mgrvn")]
+player_name = "Player 1"
+character_class = SubResource("Resource_b725r")
+attack_action = &"ui_left"
+
+[node name="Player2" parent="." instance=ExtResource("2_mgrvn")]
+player_name = "Player 2"
+character_class = ExtResource("4_45xdk")
+attack_action = &"ui_right"

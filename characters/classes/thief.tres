@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterClass" load_steps=2 format=3 uid="uid://wp88mpaj0b5u"]
+
+[ext_resource type="Script" path="res://characters/character_class.gd" id="1_n7o87"]
+
+[resource]
+script = ExtResource("1_n7o87")
+name = ""
+max_health = 80
+base_speed = 340.0
+base_jump = -420.0
+abilities = 112
