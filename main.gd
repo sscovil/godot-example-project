@@ -18,6 +18,12 @@ func _ready():
 	
 	# Connect the `just_attacked` signal from $Player2 to the _on_player_2_just_attacked() method.
 	player_2.just_attacked.connect(_on_player_2_just_attacked)
+	
+	# Even though the randomized PlayerStats values do not appear in the editor inspector, they
+	# are in fact assigned random values at runtime.
+	for stat in ["strength", "intelligence", "wisdom", "dexterity", "constitution", "charisma"]:
+		prints(player_1.player_name, stat, player_1.stats.get(stat))
+		prints(player_2.player_name, stat, player_2.stats.get(stat))
 
 
 func _on_player_1_just_attacked(attacker_name: String, attack_roll: int):

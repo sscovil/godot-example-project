@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://wlccy3s21rn1"]
+[gd_scene load_steps=9 format=3 uid="uid://wlccy3s21rn1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_3vrmq"]
 [ext_resource type="PackedScene" uid="uid://cf38id8byqxuy" path="res://characters/player.tscn" id="2_mgrvn"]
 [ext_resource type="Script" path="res://characters/character_class.gd" id="3_xkgdy"]
 [ext_resource type="Resource" uid="uid://wp88mpaj0b5u" path="res://characters/classes/thief.tres" id="4_45xdk"]
+[ext_resource type="Script" path="res://characters/player_stats.gd" id="4_b2y5s"]
 
-[sub_resource type="Resource" id="Resource_b725r"]
+[sub_resource type="Resource" id="Resource_bn7hg"]
 resource_local_to_scene = true
 script = ExtResource("3_xkgdy")
 name = "Fighter"
@@ -14,15 +15,35 @@ base_speed = 280.0
 base_jump = -400.0
 abilities = 0
 
+[sub_resource type="Resource" id="Resource_xj2xh"]
+script = ExtResource("4_b2y5s")
+strength = 0
+intelligence = 0
+wisdom = 0
+dexterity = 0
+constitution = 0
+charisma = 0
+
+[sub_resource type="Resource" id="Resource_it0fp"]
+script = ExtResource("4_b2y5s")
+strength = 0
+intelligence = 0
+wisdom = 0
+dexterity = 0
+constitution = 0
+charisma = 0
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_3vrmq")
 
 [node name="Player1" parent="." instance=ExtResource("2_mgrvn")]
 player_name = "Player 1"
-character_class = SubResource("Resource_b725r")
+character_class = SubResource("Resource_bn7hg")
 attack_action = &"ui_left"
+stats = SubResource("Resource_xj2xh")
 
 [node name="Player2" parent="." instance=ExtResource("2_mgrvn")]
 player_name = "Player 2"
 character_class = ExtResource("4_45xdk")
 attack_action = &"ui_right"
+stats = SubResource("Resource_it0fp")

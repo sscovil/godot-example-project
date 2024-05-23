@@ -32,6 +32,9 @@ enum PlayerState {
 ## An input action used to indicate that this player is attacking.
 @export var attack_action: StringName
 
+## The player's character attributes (e.g. strength, intelligence, wisdom).
+@export var stats: PlayerStats
+
 ## Used to cache the current state of the player.
 var current_state: PlayerState
 
